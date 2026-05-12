@@ -3,6 +3,7 @@
 # Usage: ./scripts/sc-restore.sh [snapshot-id|latest] [target-dir]
 set -euo pipefail
 cd "$(dirname "$0")/.."
+# shellcheck source=/dev/null
 set -a; . ./.env; set +a
 
 SNAP="${1:-latest}"

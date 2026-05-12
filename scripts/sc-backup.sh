@@ -2,6 +2,7 @@
 # sc-backup.sh — opinionated Restic backup with sane defaults.
 set -euo pipefail
 cd "$(dirname "$0")/.."
+# shellcheck source=/dev/null
 set -a; . ./.env; set +a
 
 EXCLUDE_ARGS=()

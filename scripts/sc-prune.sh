@@ -2,6 +2,7 @@
 # sc-prune.sh — apply retention policy.
 set -euo pipefail
 cd "$(dirname "$0")/.."
+# shellcheck source=/dev/null
 set -a; . ./.env; set +a
 echo "[*] Applying retention (h:${KEEP_HOURLY} d:${KEEP_DAILY} w:${KEEP_WEEKLY} m:${KEEP_MONTHLY} y:${KEEP_YEARLY})"
 restic forget \
