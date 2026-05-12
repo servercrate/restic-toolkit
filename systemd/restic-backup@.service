@@ -1,0 +1,15 @@
+[Unit]
+Description=ServerCrate Restic backup (%i)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/restic-toolkit
+ExecStart=/opt/restic-toolkit/scripts/sc-backup.sh
+Nice=10
+IOSchedulingClass=best-effort
+IOSchedulingPriority=7
+
+[Install]
+WantedBy=multi-user.target

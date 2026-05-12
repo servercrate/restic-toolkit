@@ -1,0 +1,11 @@
+[Unit]
+Description=ServerCrate Restic backup timer (%i)
+
+[Timer]
+OnCalendar=*-*-* 02:00:00
+RandomizedDelaySec=20m
+Persistent=true
+Unit=restic-backup@%i.service
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,9 @@
+services:
+  restic-backup:
+    build: ..
+    env_file: ../.env
+    volumes:
+      - /etc/restic.pw:/etc/restic.pw:ro
+      - /var/cache/restic:/var/cache/restic
+      - /:/host:ro
+    restart: "no"
