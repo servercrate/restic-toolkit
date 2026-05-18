@@ -5,6 +5,7 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 [ -f .env ] || { echo "[!] .env missing — copy templates/env.example"; exit 1; }
 # shellcheck source=/dev/null
+# shellcheck disable=SC1091  # .env is gitignored, not analyzable
 set -a; . ./.env; set +a
 [ -n "${RESTIC_REPOSITORY:-}" ] || { echo "[!] RESTIC_REPOSITORY unset"; exit 1; }
 [ -f "${RESTIC_PASSWORD_FILE:-}" ] || { echo "[!] password file missing: $RESTIC_PASSWORD_FILE"; exit 1; }

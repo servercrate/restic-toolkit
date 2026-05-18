@@ -4,6 +4,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 # shellcheck source=/dev/null
+# shellcheck disable=SC1091  # .env is gitignored, not analyzable
 set -a; . ./.env; set +a
 
 SNAP="${1:-latest}"

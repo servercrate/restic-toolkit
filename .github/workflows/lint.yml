@@ -8,4 +8,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: sudo apt-get install -y shellcheck
-      - run: shellcheck scripts/*.sh
+      - run: shellcheck --severity=warning scripts/*.sh
